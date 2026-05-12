@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bett KE Tech Ltd — Software Development Agency, Kenya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#09090b;
+  --ink2:#3f3f46;
+  --ink3:#a1a1aa;
+  --paper:#fafaf9;
+  --paper2:#f4f4f5;
+  --paper3:#e4e4e7;
+  --accent:#dc2626;
+  --accent2:#f97316;
+  --blue:#2563eb;
+  --green:#16a34a;
+  --gold:#d97706;
+  --white:#fff;
+  --nav-h:68px;
+}
+html{scroll-behavior:smooth;font-size:15px}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);overflow-x:hidden;line-height:1.7}
+
+/* ── NOISE OVERLAY ── */
+body::before{
+  content:'';position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:1000;opacity:.4;
+}
+
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:200;
+  height:var(--nav-h);
+  background:rgba(250,250,249,.92);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--paper3);
+  display:flex;align-items:center;
+  padding:0 5vw;gap:2rem;
+}
+.nav-logo{
+  display:flex;align-items:center;gap:10px;
+  text-decoration:none;
+  font-family:'Fraunces',serif;
+  font-size:1.15rem;font-weight:700;
+  color:var(--ink);
+  flex-shrink:0;letter-spacing:-.02em;
+}
+.logo-sq{
+  width:36px;height:36px;
+  background:var(--ink);
+  border-radius:8px;
+  display:grid;place-items:center;
+  color:#fff;font-size:.78rem;font-weight:700;
+  font-family:'Fira Code',monospace;
+  letter-spacing:-.05em;flex-shrink:0;
+}
+.nav-links{display:flex;align-items:center;gap:2px;margin-left:auto}
+.nav-links a{
+  padding:7px 15px;color:var(--ink2);
+  text-decoration:none;font-size:.83rem;font-weight:500;
+  border-radius:8px;transition:all .15s;
+}
+.nav-links a:hover{color:var(--ink);background:var(--paper2)}
+.nav-cta{
+  background:var(--ink)!important;color:#fff!important;
+  padding:8px 18px!important;border-radius:8px!important;
+  font-weight:600!important;margin-left:6px;
+}
+.nav-cta:hover{background:#27272a!important;transform:translateY(-1px)}
+
+/* ── HERO ── */
+.hero{
+  min-height:calc(100vh - var(--nav-h));
+  background:var(--ink);
+  display:grid;
+  grid-template-rows:1fr auto;
+  position:relative;overflow:hidden;
+  padding:0 5vw;
+}
+/* Diagonal red stripe */
+.hero::before{
+  content:'';position:absolute;
+  top:-10%;right:-5%;
+  width:55%;height:130%;
+  background:linear-gradient(135deg,var(--accent) 0%,#7f1d1d 100%);
+  clip-path:polygon(15% 0,100% 0,100% 100%,0% 100%);
+  opacity:.07;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+  padding:100px 0 80px;
+  position:relative;z-index:1;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'Fira Code',monospace;
+  font-size:.72rem;color:rgba(255,255,255,.35);
+  letter-spacing:.12em;text-transform:uppercase;
+  margin-bottom:24px;
+}
+.hero-eyebrow::before{content:'//';color:var(--accent);margin-right:4px}
+.hero h1{
+  font-family:'Fraunces',serif;
+  font-size:clamp(2.8rem,5.8vw,5rem);
+  font-weight:900;
+  color:#fff;
+  line-height:1.0;
+  letter-spacing:-.04em;
+  margin-bottom:28px;
+}
+.hero h1 em{
+  font-style:italic;font-weight:300;
+  color:rgba(255,255,255,.45);
+  display:block;font-size:.85em;
+}
+.hero h1 strong{color:var(--accent);font-style:normal}
+.hero-sub{
+  color:rgba(255,255,255,.4);
+  font-size:.95rem;line-height:1.8;
+  max-width:460px;margin-bottom:40px;
+}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn-red{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--accent);color:#fff;
+  padding:14px 28px;border-radius:10px;
+  font-size:.9rem;font-weight:600;text-decoration:none;
+  border:none;cursor:pointer;transition:all .2s;
+  letter-spacing:.01em;
+}
+.btn-red:hover{background:#b91c1c;transform:translateY(-2px);box-shadow:0 8px 24px rgba(220,38,38,.35)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:8px;
+  background:transparent;color:rgba(255,255,255,.6);
+  padding:14px 28px;border-radius:10px;
+  border:1px solid rgba(255,255,255,.15);
+  font-size:.9rem;font-weight:500;text-decoration:none;
+  transition:all .2s;
+}
+.btn-ghost:hover{background:rgba(255,255,255,.07);color:#fff;border-color:rgba(255,255,255,.3)}
+
+/* Hero right — services stack */
+.hero-right{display:flex;flex-direction:column;gap:12px}
+.hero-service{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:14px;
+  padding:18px 22px;
+  display:flex;align-items:center;gap:16px;
+  transition:all .25s;
+  cursor:default;
+}
+.hero-service:hover{
+  background:rgba(255,255,255,.07);
+  border-color:rgba(255,255,255,.18);
+  transform:translateX(4px);
+}
+.hs-num{
+  font-family:'Fira Code',monospace;
+  font-size:.72rem;color:var(--accent);
+  letter-spacing:.05em;flex-shrink:0;width:28px;
+}
+.hs-name{font-size:.9rem;font-weight:600;color:#fff;line-height:1.2}
+.hs-tech{font-size:.75rem;color:rgba(255,255,255,.3);font-family:'Fira Code',monospace;margin-top:2px}
+.hs-ico{margin-left:auto;font-size:22px}
+
+/* Bottom hero band */
+.hero-band{
+  border-top:1px solid rgba(255,255,255,.07);
+  padding:24px 0;
+  display:flex;gap:48px;
+  flex-wrap:wrap;
+  position:relative;z-index:1;
+}
+.hb-item{display:flex;flex-direction:column;gap:3px}
+.hb-val{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:700;color:#fff;line-height:1}
+.hb-lbl{font-size:.75rem;color:rgba(255,255,255,.35);font-weight:500;letter-spacing:.05em;text-transform:uppercase}
+
+/* ── MARQUEE ── */
+.marquee{
+  background:var(--accent);
+  padding:14px 0;overflow:hidden;white-space:nowrap;
+}
+.marquee-inner{
+  display:inline-flex;gap:0;
+  animation:mar 28s linear infinite;
+}
+.marquee-item{
+  display:inline-flex;align-items:center;gap:0;
+  font-family:'Fira Code',monospace;
+  font-size:.78rem;font-weight:500;
+  color:rgba(255,255,255,.9);
+  letter-spacing:.04em;text-transform:uppercase;
+  padding:0 32px;
+  border-right:1px solid rgba(255,255,255,.2);
+  flex-shrink:0;
+}
+@keyframes mar{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ── SECTION COMMONS ── */
+.wrap{max-width:1180px;margin:0 auto;padding:0 5vw}
+.eyebrow{
+  font-family:'Fira Code',monospace;
+  font-size:.72rem;font-weight:500;
+  letter-spacing:.12em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:14px;
+  display:block;
+}
+.section-h{
+  font-family:'Fraunces',serif;
+  font-size:clamp(2rem,3.5vw,3rem);
+  font-weight:900;line-height:1.05;
+  letter-spacing:-.035em;
+  margin-bottom:16px;
+}
+.section-h em{font-style:italic;font-weight:300;color:var(--ink3)}
+.body-p{color:var(--ink2);font-size:.93rem;line-height:1.85;margin-bottom:12px}
+
+/* ── SERVICES ── */
+section.services{padding:110px 0}
+.services-top{
+  display:grid;grid-template-columns:1fr 1.8fr;
+  gap:80px;align-items:start;margin-bottom:70px;
+}
+.services-intro .section-h{margin-bottom:20px}
+.services-list{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--paper3);border-radius:18px;overflow:hidden;border:1px solid var(--paper3)}
+.svc-item{
+  background:var(--white);
+  padding:32px 30px;
+  transition:all .2s;
+  border-radius:0;
+  position:relative;
+}
+.svc-item:hover{background:var(--ink);z-index:2}
+.svc-item:hover .svc-num{color:rgba(255,255,255,.15)}
+.svc-item:hover .svc-title{color:#fff}
+.svc-item:hover .svc-desc{color:rgba(255,255,255,.45)}
+.svc-item:hover .svc-tags span{background:rgba(255,255,255,.1);color:rgba(255,255,255,.5)}
+.svc-num{
+  font-family:'Fira Code',monospace;
+  font-size:.7rem;color:var(--paper3);
+  letter-spacing:.08em;margin-bottom:20px;
+  display:block;transition:color .2s;
+}
+.svc-icon{font-size:28px;margin-bottom:14px;display:block}
+.svc-title{
+  font-family:'Fraunces',serif;
+  font-size:1.25rem;font-weight:700;
+  letter-spacing:-.02em;margin-bottom:8px;
+  color:var(--ink);transition:color .2s;
+}
+.svc-desc{font-size:.82rem;color:var(--ink3);line-height:1.65;margin-bottom:16px;transition:color .2s}
+.svc-tags{display:flex;gap:6px;flex-wrap:wrap}
+.svc-tags span{
+  font-family:'Fira Code',monospace;
+  font-size:.68rem;padding:3px 9px;border-radius:5px;
+  background:var(--paper2);color:var(--ink3);
+  transition:all .2s;
+}
+
+/* ── PROJECTS ── */
+section.projects{background:var(--ink);padding:110px 0}
+.projects-top{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  margin-bottom:56px;gap:20px;flex-wrap:wrap;
+}
+.projects-top .eyebrow{color:rgba(255,255,255,.3)}
+.projects-top .section-h{color:#fff;margin-bottom:0}
+.projects-top .section-h em{color:rgba(255,255,255,.2)}
+.proj-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:16px}
+
+.proj-card{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:18px;
+  padding:32px;
+  transition:all .25s;
+  display:flex;flex-direction:column;
+  position:relative;overflow:hidden;
+}
+.proj-card:hover{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.16);transform:translateY(-4px)}
+.proj-card.featured{
+  background:linear-gradient(135deg,rgba(220,38,38,.12) 0%,rgba(255,255,255,.04) 100%);
+  border-color:rgba(220,38,38,.25);
+}
+.proj-card.featured:hover{border-color:rgba(220,38,38,.45)}
+.proj-stripe{
+  position:absolute;top:0;left:0;right:0;height:3px;border-radius:18px 18px 0 0;
+}
+.stripe-red{background:var(--accent)}
+.stripe-blue{background:var(--blue)}
+.stripe-gold{background:var(--gold)}
+.stripe-green{background:var(--green)}
+.stripe-orange{background:var(--accent2)}
+
+.proj-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
+.proj-icon{font-size:36px}
+.proj-status{
+  font-family:'Fira Code',monospace;font-size:.65rem;font-weight:500;
+  padding:4px 10px;border-radius:20px;letter-spacing:.04em;text-transform:uppercase;
+}
+.st-live{background:rgba(22,163,74,.2);color:#4ade80}
+.st-beta{background:rgba(217,119,6,.2);color:#fbbf24}
+.st-soon{background:rgba(255,255,255,.07);color:rgba(255,255,255,.35)}
+
+.proj-name{
+  font-family:'Fraunces',serif;
+  font-size:1.4rem;font-weight:700;
+  color:#fff;letter-spacing:-.025em;
+  margin-bottom:8px;
+}
+.proj-cat{
+  font-family:'Fira Code',monospace;font-size:.7rem;
+  color:rgba(255,255,255,.3);letter-spacing:.06em;
+  text-transform:uppercase;margin-bottom:14px;
+}
+.proj-desc{font-size:.83rem;color:rgba(255,255,255,.4);line-height:1.65;margin-bottom:20px;flex:1}
+.proj-stack{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:22px}
+.proj-stack span{
+  font-family:'Fira Code',monospace;font-size:.68rem;
+  padding:3px 9px;border-radius:5px;
+  background:rgba(255,255,255,.07);color:rgba(255,255,255,.4);
+}
+.proj-link{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:9px 18px;border-radius:8px;
+  font-size:.82rem;font-weight:600;text-decoration:none;
+  background:rgba(255,255,255,.09);color:rgba(255,255,255,.65);
+  border:1px solid rgba(255,255,255,.12);
+  transition:all .15s;width:fit-content;
+}
+.proj-link:hover{background:rgba(255,255,255,.16);color:#fff}
+
+/* ── PROCESS ── */
+section.process{padding:110px 0;background:var(--paper2);border-top:1px solid var(--paper3);border-bottom:1px solid var(--paper3)}
+.process-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.process-steps{display:flex;flex-direction:column;gap:0}
+.step{
+  display:flex;gap:24px;align-items:flex-start;
+  padding:28px 0;
+  border-bottom:1px solid var(--paper3);
+  position:relative;
+}
+.step:last-child{border-bottom:none}
+.step-n{
+  width:48px;height:48px;
+  background:var(--ink);border-radius:12px;
+  display:grid;place-items:center;
+  font-family:'Fira Code',monospace;
+  font-size:.88rem;font-weight:500;color:#fff;
+  flex-shrink:0;
+  transition:all .2s;
+}
+.step:hover .step-n{background:var(--accent)}
+.step-title{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:700;margin-bottom:6px;letter-spacing:-.02em}
+.step-desc{font-size:.83rem;color:var(--ink3);line-height:1.6}
+.process-right .section-h{margin-bottom:20px}
+.tech-cloud{display:flex;gap:8px;flex-wrap:wrap;margin-top:28px}
+.tech-pill{
+  padding:8px 16px;border-radius:30px;
+  font-family:'Fira Code',monospace;font-size:.75rem;font-weight:500;
+  border:1.5px solid var(--paper3);
+  color:var(--ink2);background:var(--white);
+  transition:all .2s;
+}
+.tech-pill:hover{border-color:var(--ink);color:var(--ink);transform:translateY(-2px)}
+
+/* ── FOUNDER ── */
+section.founder{padding:110px 0}
+.founder-inner{
+  display:grid;grid-template-columns:400px 1fr;
+  gap:80px;align-items:center;
+}
+.founder-visual{
+  background:var(--ink);
+  border-radius:20px;
+  padding:48px 40px;
+  position:relative;overflow:hidden;
+}
+.founder-visual::before{
+  content:'';position:absolute;top:-60px;right:-60px;
+  width:200px;height:200px;border-radius:50%;
+  background:radial-gradient(circle,rgba(220,38,38,.3) 0%,transparent 70%);
+}
+.founder-avatar{
+  width:90px;height:90px;border-radius:14px;
+  background:rgba(255,255,255,.08);
+  display:grid;place-items:center;
+  font-size:42px;margin-bottom:24px;
+}
+.founder-name{
+  font-family:'Fraunces',serif;
+  font-size:2.2rem;font-weight:900;
+  color:#fff;letter-spacing:-.04em;margin-bottom:4px;
+}
+.founder-title{
+  font-family:'Fira Code',monospace;
+  font-size:.72rem;color:var(--accent);
+  letter-spacing:.1em;text-transform:uppercase;
+  margin-bottom:20px;
+}
+.founder-tagline{
+  color:rgba(255,255,255,.4);
+  font-size:.85rem;line-height:1.7;
+  margin-bottom:28px;
+}
+.founder-contacts{display:flex;flex-direction:column;gap:10px}
+.fc-item{
+  display:flex;align-items:center;gap:10px;
+  padding:12px 16px;border-radius:10px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.09);
+  text-decoration:none;color:rgba(255,255,255,.65);
+  font-size:.83rem;font-weight:500;
+  transition:all .15s;
+}
+.fc-item:hover{background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.2)}
+.fc-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.dot-green{background:#4ade80}
+.dot-blue{background:#60a5fa}
+.dot-orange{background:#fb923c}
+.founder-right .section-h{margin-bottom:20px}
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+.skill-card{
+  background:var(--paper2);border:1px solid var(--paper3);
+  border-radius:12px;padding:18px;
+  transition:all .2s;
+}
+.skill-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.07);border-color:var(--ink)}
+.sk-ico{font-size:22px;margin-bottom:8px;display:block}
+.sk-name{font-size:.85rem;font-weight:600;color:var(--ink);margin-bottom:3px}
+.sk-sub{font-size:.76rem;color:var(--ink3)}
+
+/* ── PRICING ── */
+section.pricing{background:var(--ink);padding:110px 0}
+.pricing-top{text-align:center;margin-bottom:60px}
+.pricing-top .eyebrow{color:rgba(255,255,255,.3)}
+.pricing-top .section-h{color:#fff}
+.pricing-top .section-h em{color:rgba(255,255,255,.2)}
+.pricing-top p{color:rgba(255,255,255,.4);font-size:.9rem;max-width:500px;margin:0 auto}
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px}
+.pc{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:18px;padding:32px;
+  transition:all .2s;
+}
+.pc:hover{border-color:rgba(255,255,255,.2);background:rgba(255,255,255,.07)}
+.pc.featured-pc{
+  border-color:rgba(220,38,38,.4);
+  background:linear-gradient(160deg,rgba(220,38,38,.1) 0%,rgba(255,255,255,.04) 100%);
+  position:relative;
+}
+.feat-chip{
+  position:absolute;top:-12px;left:50%;transform:translateX(-50%);
+  background:var(--accent);color:#fff;
+  font-size:.68rem;font-weight:700;padding:4px 14px;border-radius:20px;
+  letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;
+}
+.pc-plan{
+  font-family:'Fira Code',monospace;
+  font-size:.72rem;color:rgba(255,255,255,.35);
+  letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;
+}
+.pc-name{
+  font-family:'Fraunces',serif;
+  font-size:1.5rem;font-weight:700;
+  color:#fff;letter-spacing:-.025em;margin-bottom:6px;
+}
+.pc-desc{font-size:.8rem;color:rgba(255,255,255,.35);margin-bottom:22px;line-height:1.55}
+.pc-price{
+  font-family:'Fraunces',serif;
+  font-size:2.6rem;font-weight:900;
+  color:#fff;letter-spacing:-.04em;
+  line-height:1;margin-bottom:6px;
+}
+.pc-price span{font-size:1rem;font-weight:300;color:rgba(255,255,255,.35)}
+.pc-period{
+  font-family:'Fira Code',monospace;
+  font-size:.7rem;color:rgba(255,255,255,.25);
+  margin-bottom:24px;
+}
+.pc-features{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+.pc-features li{
+  font-size:.83rem;color:rgba(255,255,255,.5);
+  display:flex;gap:9px;align-items:flex-start;
+}
+.pc-features li::before{content:'→';color:var(--accent);flex-shrink:0;font-size:.9rem}
+.pc-cta{
+  display:block;text-align:center;
+  padding:12px;border-radius:10px;
+  font-size:.88rem;font-weight:600;text-decoration:none;
+  transition:all .15s;
+}
+.cta-red{background:var(--accent);color:#fff}
+.cta-red:hover{background:#b91c1c}
+.cta-wh{background:rgba(255,255,255,.09);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.12)}
+.cta-wh:hover{background:rgba(255,255,255,.16);color:#fff}
+
+/* Custom dev note */
+.custom-note{
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:14px;padding:28px 32px;
+  display:flex;align-items:center;gap:24px;
+  flex-wrap:wrap;
+}
+.cn-left{flex:1;min-width:220px}
+.cn-title{font-family:'Fraunces',serif;font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:6px;letter-spacing:-.02em}
+.cn-sub{font-size:.83rem;color:rgba(255,255,255,.35);line-height:1.55}
+
+/* ── VALUES ── */
+section.values{padding:110px 0;border-top:1px solid var(--paper3)}
+.values-top{text-align:center;margin-bottom:56px}
+.vals-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--paper3);border:1px solid var(--paper3);border-radius:18px;overflow:hidden}
+.val-cell{
+  background:var(--white);
+  padding:36px 32px;
+  transition:all .2s;
+}
+.val-cell:hover{background:var(--ink)}
+.val-cell:hover .vc-title{color:#fff}
+.val-cell:hover .vc-desc{color:rgba(255,255,255,.4)}
+.vc-ico{font-size:28px;margin-bottom:16px;display:block}
+.vc-title{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:700;margin-bottom:8px;transition:color .2s;letter-spacing:-.02em}
+.vc-desc{font-size:.82rem;color:var(--ink3);line-height:1.65;transition:color .2s}
+
+/* ── CTA FINAL ── */
+section.final-cta{padding:110px 0}
+.final-inner{
+  background:var(--ink);
+  border-radius:24px;
+  padding:80px 60px;
+  text-align:center;
+  position:relative;overflow:hidden;
+}
+.final-inner::before{
+  content:'BUILD KE';
+  position:absolute;
+  font-family:'Fraunces',serif;
+  font-size:14vw;font-weight:900;
+  color:rgba(255,255,255,.02);
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  white-space:nowrap;pointer-events:none;
+  letter-spacing:-.05em;
+}
+.final-inner .eyebrow{color:rgba(255,255,255,.25);margin-bottom:20px}
+.final-inner h2{
+  font-family:'Fraunces',serif;
+  font-size:clamp(2rem,4vw,3.5rem);
+  font-weight:900;color:#fff;
+  letter-spacing:-.04em;margin-bottom:16px;
+  position:relative;z-index:1;
+}
+.final-inner p{color:rgba(255,255,255,.4);font-size:.95rem;max-width:500px;margin:0 auto 40px;position:relative;z-index:1}
+.final-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+.btn-wa{
+  display:inline-flex;align-items:center;gap:8px;
+  background:#16a34a;color:#fff;
+  padding:14px 28px;border-radius:10px;
+  font-size:.9rem;font-weight:600;text-decoration:none;
+  transition:all .2s;
+}
+.btn-wa:hover{background:#15803d;transform:translateY(-2px)}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--ink);
+  border-top:1px solid rgba(255,255,255,.06);
+  padding:36px 5vw;
+}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.footer-brand{
+  font-family:'Fraunces',serif;
+  font-size:.95rem;font-weight:700;
+  color:rgba(255,255,255,.35);text-decoration:none;
+}
+.footer-copy{font-size:.75rem;color:rgba(255,255,255,.2);margin-top:2px}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap}
+.footer-links a{font-size:.78rem;color:rgba(255,255,255,.3);text-decoration:none;font-weight:500;transition:color .15s}
+.footer-links a:hover{color:rgba(255,255,255,.7)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-right{display:none}
+  .services-top{grid-template-columns:1fr;gap:32px}
+  .services-list{grid-template-columns:1fr}
+  .proj-grid{grid-template-columns:1fr 1fr}
+  .process-grid{grid-template-columns:1fr;gap:48px}
+  .founder-inner{grid-template-columns:1fr;gap:48px}
+  .price-grid{grid-template-columns:1fr}
+  .vals-grid{grid-template-columns:1fr 1fr}
+  .final-inner{padding:48px 28px}
+}
+@media(max-width:640px){
+  .proj-grid{grid-template-columns:1fr}
+  .skills-grid{grid-template-columns:1fr}
+  .vals-grid{grid-template-columns:1fr}
+  .nav-links a:not(.nav-cta){display:none}
+  section.services,section.projects,section.process,section.founder,section.pricing,section.values,section.final-cta{padding:72px 0}
+  .hero-band{gap:28px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="logo-sq">BK</div>
+    Bett KE Tech
+  </a>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#founder">About</a>
+    <a href="#pricing">Pricing</a>
+    <a href="https://wa.me/254704518130" target="_blank" class="nav-cta">Get a Quote →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-grid">
+    <div>
+      <div class="hero-eyebrow">Nairobi, Kenya · Est. 2025</div>
+      <h1>
+        We build <strong>software</strong>
+        <em>that actually works<br>in Kenya.</em>
+      </h1>
+      <p class="hero-sub">Web apps, mobile apps, payment integrations, custom platforms — built by a Kenyan developer who understands your market, your users, and your stack.</p>
+      <div class="hero-actions">
+        <a href="#services" class="btn-red">See What We Build →</a>
+        <a href="https://wa.me/254704518130" target="_blank" class="btn-ghost">💬 WhatsApp Us</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-service">
+        <div class="hs-num">01</div>
+        <div>
+          <div class="hs-name">Web Applications</div>
+          <div class="hs-tech">React · Next.js · Firebase · Node.js</div>
+        </div>
+        <div class="hs-ico">🌐</div>
+      </div>
+      <div class="hero-service">
+        <div class="hs-num">02</div>
+        <div>
+          <div class="hs-name">Mobile Apps</div>
+          <div class="hs-tech">React Native · Flutter · Android</div>
+        </div>
+        <div class="hs-ico">📱</div>
+      </div>
+      <div class="hero-service">
+        <div class="hs-num">03</div>
+        <div>
+          <div class="hs-name">Payment Integrations</div>
+          <div class="hs-tech">M-Pesa · STK Push · Paynecta · Stripe</div>
+        </div>
+        <div class="hs-ico">💳</div>
+      </div>
+      <div class="hero-service">
+        <div class="hs-num">04</div>
+        <div>
+          <div class="hs-name">Custom Platforms</div>
+          <div class="hs-tech">SaaS · Admin dashboards · APIs</div>
+        </div>
+        <div class="hs-ico">🛠️</div>
+      </div>
+      <div class="hero-service">
+        <div class="hs-num">05</div>
+        <div>
+          <div class="hs-name">E-Commerce & Business Tools</div>
+          <div class="hs-tech">Online stores · Booking · POS</div>
+        </div>
+        <div class="hs-ico">🛒</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-band">
+    <div class="hb-item">
+      <div class="hb-val">5+</div>
+      <div class="hb-lbl">Live products</div>
+    </div>
+    <div class="hb-item">
+      <div class="hb-val">M-Pesa</div>
+      <div class="hb-lbl">Payments ready</div>
+    </div>
+    <div class="hb-item">
+      <div class="hb-val">Full-Stack</div>
+      <div class="hb-lbl">Web & mobile</div>
+    </div>
+    <div class="hb-item">
+      <div class="hb-val">KE-First</div>
+      <div class="hb-lbl">Built for Kenya</div>
+    </div>
+  </div>
+</div>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-inner">
+    <span class="marquee-item">Web Applications</span>
+    <span class="marquee-item">Mobile Apps</span>
+    <span class="marquee-item">M-Pesa Integration</span>
+    <span class="marquee-item">Firebase Backend</span>
+    <span class="marquee-item">React & Next.js</span>
+    <span class="marquee-item">E-Commerce Stores</span>
+    <span class="marquee-item">School Management Systems</span>
+    <span class="marquee-item">Custom APIs</span>
+    <span class="marquee-item">Admin Dashboards</span>
+    <span class="marquee-item">Sports Platforms</span>
+    <span class="marquee-item">SaaS Products</span>
+    <span class="marquee-item">Business Automation</span>
+    <span class="marquee-item">Web Applications</span>
+    <span class="marquee-item">Mobile Apps</span>
+    <span class="marquee-item">M-Pesa Integration</span>
+    <span class="marquee-item">Firebase Backend</span>
+    <span class="marquee-item">React & Next.js</span>
+    <span class="marquee-item">E-Commerce Stores</span>
+    <span class="marquee-item">School Management Systems</span>
+    <span class="marquee-item">Custom APIs</span>
+    <span class="marquee-item">Admin Dashboards</span>
+    <span class="marquee-item">Sports Platforms</span>
+    <span class="marquee-item">SaaS Products</span>
+    <span class="marquee-item">Business Automation</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="services-top">
+      <div class="services-intro">
+        <span class="eyebrow">What We Do</span>
+        <h2 class="section-h">Every type of<br><em>software, delivered.</em></h2>
+        <p class="body-p">From a simple business website to a full multi-tenant SaaS platform — if you can describe it, we can build it. No outsourcing, no guesswork. One developer, end-to-end ownership.</p>
+        <p class="body-p">Need M-Pesa on your platform? A mobile app for your business? A custom admin dashboard? We've done it all, and we do it at Kenyan prices.</p>
+        <a href="https://wa.me/254704518130" target="_blank" class="btn-red" style="margin-top:16px;display:inline-flex">💬 Discuss Your Project</a>
+      </div>
+      <div class="services-list">
+
+        <div class="svc-item">
+          <span class="svc-num">01 ——</span>
+          <span class="svc-icon">🌐</span>
+          <div class="svc-title">Web Application Development</div>
+          <div class="svc-desc">Full-stack web apps from simple landing pages to complex multi-user platforms. Fast, secure, mobile-first.</div>
+          <div class="svc-tags"><span>React</span><span>Next.js</span><span>Node.js</span><span>Firebase</span></div>
+        </div>
+
+        <div class="svc-item">
+          <span class="svc-num">02 ——</span>
+          <span class="svc-icon">📱</span>
+          <div class="svc-title">Mobile App Development</div>
+          <div class="svc-desc">Android and cross-platform mobile apps. From customer-facing apps to staff tools and field applications.</div>
+          <div class="svc-tags"><span>React Native</span><span>Flutter</span><span>Android</span></div>
+        </div>
+
+        <div class="svc-item">
+          <span class="svc-num">03 ——</span>
+          <span class="svc-icon">💳</span>
+          <div class="svc-title">Payment Integration</div>
+          <div class="svc-desc">M-Pesa STK Push, Paybill, Till numbers, card payments. Integrated cleanly into any web or mobile app.</div>
+          <div class="svc-tags"><span>M-Pesa</span><span>Daraja API</span><span>Stripe</span><span>Paynecta</span></div>
+        </div>
+
+        <div class="svc-item">
+          <span class="svc-num">04 ——</span>
+          <span class="svc-icon">🛒</span>
+          <div class="svc-title">E-Commerce Platforms</div>
+          <div class="svc-desc">Online stores with inventory management, M-Pesa checkout, delivery tracking, and admin dashboards.</div>
+          <div class="svc-tags"><span>Custom Build</span><span>WooCommerce</span><span>Shopify</span></div>
+        </div>
+
+        <div class="svc-item">
+          <span class="svc-num">05 ——</span>
+          <span class="svc-icon">🏢</span>
+          <div class="svc-title">Business Management Systems</div>
+          <div class="svc-desc">School systems, HR tools, inventory managers, booking platforms — tailored exactly to how your business runs.</div>
+          <div class="svc-tags"><span>Custom SaaS</span><span>Multi-user</span><span>Cloud</span></div>
+        </div>
+
+        <div class="svc-item">
+          <span class="svc-num">06 ——</span>
+          <span class="svc-icon">⚙️</span>
+          <div class="svc-title">APIs & Backend Systems</div>
+          <div class="svc-desc">REST APIs, webhooks, automation scripts, integrations with third-party services and government systems.</div>
+          <div class="svc-tags"><span>Node.js</span><span>Python</span><span>Firebase</span><span>REST</span></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects" id="projects">
+  <div class="wrap">
+    <div class="projects-top">
+      <div>
+        <span class="eyebrow">Our Work</span>
+        <h2 class="section-h">Live <em>products</em> we've shipped</h2>
+      </div>
+    </div>
+    <div class="proj-grid">
+
+      <div class="proj-card featured">
+        <div class="proj-stripe stripe-red"></div>
+        <div class="proj-header">
+          <div class="proj-icon">🏫</div>
+          <span class="proj-status st-live">Live</span>
+        </div>
+        <div class="proj-cat">EdTech · School Management · SaaS</div>
+        <div class="proj-name">CBE Mark Sheet System</div>
+        <div class="proj-desc">A full CBC-aligned school management platform built for Kenyan primary schools. Handles Grade 1–9 mark entry across all subjects, auto-calculates performance levels (EE1–BE2), generates print-ready report cards, manages teacher accounts, and bills schools via M-Pesa STK Push. Built entirely from scratch on Firebase.</div>
+        <div class="proj-stack">
+          <span>Firebase</span><span>React</span><span>M-Pesa Daraja</span><span>CBC Grades 1–9</span><span>Report Cards</span>
+        </div>
+        <a href="https://cbemark.com" target="_blank" class="proj-link">Visit cbemark.com →</a>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-stripe stripe-gold"></div>
+        <div class="proj-header">
+          <div class="proj-icon">⚽</div>
+          <span class="proj-status st-live">Live</span>
+        </div>
+        <div class="proj-cat">Sports · Community Platform</div>
+        <div class="proj-name">Bett Officials</div>
+        <div class="proj-desc">A football predictions and analytics platform for Kenyan sports fans. Match analysis, prediction tracking, community features, and competitive leagues for punters.</div>
+        <div class="proj-stack">
+          <span>Web App</span><span>Football Data</span><span>Community</span>
+        </div>
+        <a href="https://bett.website" target="_blank" class="proj-link">Visit bett.website →</a>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-stripe stripe-blue"></div>
+        <div class="proj-header">
+          <div class="proj-icon">🏪</div>
+          <span class="proj-status st-beta">In Progress</span>
+        </div>
+        <div class="proj-cat">E-Commerce · Payment Integration</div>
+        <div class="proj-name">Custom Business Platforms</div>
+        <div class="proj-desc">We build bespoke e-commerce stores, booking systems, and business management tools on request — with M-Pesa checkout baked in from day one.</div>
+        <div class="proj-stack">
+          <span>React</span><span>M-Pesa</span><span>Custom</span>
+        </div>
+        <a href="https://wa.me/254704518130" target="_blank" class="proj-link">Request a build →</a>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-stripe stripe-green"></div>
+        <div class="proj-header">
+          <div class="proj-icon">📊</div>
+          <span class="proj-status st-beta">Beta</span>
+        </div>
+        <div class="proj-cat">SaaS · Admin Dashboard</div>
+        <div class="proj-name">Business Admin Tools</div>
+        <div class="proj-desc">Custom multi-user admin dashboards with role-based access control, reporting, and cloud sync. Built for companies managing teams, inventory, or data.</div>
+        <div class="proj-stack">
+          <span>Firebase</span><span>Multi-user</span><span>Roles</span>
+        </div>
+        <a href="https://wa.me/254704518130" target="_blank" class="proj-link">Talk to us →</a>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-stripe stripe-orange"></div>
+        <div class="proj-header">
+          <div class="proj-icon">📱</div>
+          <span class="proj-status st-soon">Coming Soon</span>
+        </div>
+        <div class="proj-cat">Mobile · Android</div>
+        <div class="proj-name">Mobile Apps for KE Businesses</div>
+        <div class="proj-desc">Android and cross-platform mobile apps for Kenyan businesses — field staff tools, customer apps, delivery tracking, and service booking apps.</div>
+        <div class="proj-stack">
+          <span>React Native</span><span>Flutter</span><span>M-Pesa</span>
+        </div>
+        <a href="https://wa.me/254704518130" target="_blank" class="proj-link">Get notified →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="process-grid">
+      <div>
+        <span class="eyebrow">How We Work</span>
+        <h2 class="section-h">Simple process,<br><em>no surprises.</em></h2>
+        <p class="body-p">We keep things lean. No endless meetings, no agency bureaucracy. You speak directly with the developer who will build your product — from first message to final delivery.</p>
+        <div class="tech-cloud">
+          <span class="tech-pill">React</span>
+          <span class="tech-pill">Next.js</span>
+          <span class="tech-pill">React Native</span>
+          <span class="tech-pill">Flutter</span>
+          <span class="tech-pill">Node.js</span>
+          <span class="tech-pill">Firebase</span>
+          <span class="tech-pill">PostgreSQL</span>
+          <span class="tech-pill">M-Pesa Daraja</span>
+          <span class="tech-pill">Stripe</span>
+          <span class="tech-pill">Python</span>
+          <span class="tech-pill">REST APIs</span>
+          <span class="tech-pill">Vercel</span>
+          <span class="tech-pill">AWS</span>
+          <span class="tech-pill">Git</span>
+        </div>
+      </div>
+      <div class="process-steps">
+        <div class="step">
+          <div class="step-n">01</div>
+          <div>
+            <div class="step-title">Discovery call on WhatsApp</div>
+            <div class="step-desc">Tell us what you need. We ask the right questions to understand your requirements, timeline, and budget. No forms, no portals — just a conversation.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-n">02</div>
+          <div>
+            <div class="step-title">Scoping & quote</div>
+            <div class="step-desc">We send a clear breakdown of features, timeline, and price. Fixed price where possible — you know what you're paying before we start.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-n">03</div>
+          <div>
+            <div class="step-title">Build & review</div>
+            <div class="step-desc">We build in milestones. You review working software at each stage. Fast feedback loops, no black-box development.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-n">04</div>
+          <div>
+            <div class="step-title">Launch & support</div>
+            <div class="step-desc">We deploy your product and stay available for support. Bug fixes, updates, and new features — all through direct WhatsApp contact.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section class="founder" id="founder">
+  <div class="wrap">
+    <div class="founder-inner">
+      <div class="founder-visual">
+        <div class="founder-avatar">👨‍💻</div>
+        <div class="founder-name">Bett Emanuel</div>
+        <div class="founder-title">Founder & Lead Developer</div>
+        <p class="founder-tagline">An independent software developer based in Kenya. Every product under the Bett KE Tech umbrella was designed and built by him — from backend architecture to pixel-perfect UI.</p>
+        <div class="founder-contacts">
+          <a href="https://wa.me/254704518130" target="_blank" class="fc-item">
+            <span class="fc-dot dot-green"></span>
+            WhatsApp · +254 704 518 130
+          </a>
+          <a href="mailto:bett@bett.website" class="fc-item">
+            <span class="fc-dot dot-blue"></span>
+            bett@bett.website
+          </a>
+          <a href="https://bett.website" target="_blank" class="fc-item">
+            <span class="fc-dot dot-orange"></span>
+            bett.website
+          </a>
+        </div>
+      </div>
+      <div class="founder-right">
+        <span class="eyebrow">The Developer</span>
+        <h2 class="section-h">One builder,<br><em>full accountability.</em></h2>
+        <p class="body-p">When you work with Bett KE Tech, you're not handed off to a junior developer or an overseas team. You work directly with Bett — the person who will architect, code, test, and deploy your product.</p>
+        <p class="body-p">With deep knowledge of the Kenyan tech landscape — M-Pesa APIs, CBC education systems, local business workflows — every solution is built with context that foreign agencies simply don't have.</p>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <span class="sk-ico">🌐</span>
+            <div class="sk-name">Full-Stack Web</div>
+            <div class="sk-sub">React, Next.js, Node, Firebase</div>
+          </div>
+          <div class="skill-card">
+            <span class="sk-ico">📱</span>
+            <div class="sk-name">Mobile Development</div>
+            <div class="sk-sub">React Native, Flutter, Android</div>
+          </div>
+          <div class="skill-card">
+            <span class="sk-ico">💳</span>
+            <div class="sk-name">Payment Systems</div>
+            <div class="sk-sub">M-Pesa, Daraja API, Stripe</div>
+          </div>
+          <div class="skill-card">
+            <span class="sk-ico">☁️</span>
+            <div class="sk-name">Cloud & DevOps</div>
+            <div class="sk-sub">Firebase, Vercel, AWS, Git</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <div class="pricing-top">
+      <span class="eyebrow">Pricing</span>
+      <h2 class="section-h">Transparent rates, <em>Kenyan prices.</em></h2>
+      <p>For the CBE Mark Sheet System subscription. Custom project pricing is quoted per-scope — WhatsApp us for a free estimate.</p>
+    </div>
+
+    <div class="price-grid">
+      <div class="pc">
+        <div class="pc-plan">CBE Mark Sheet</div>
+        <div class="pc-name">Monthly</div>
+        <div class="pc-desc">Try it for a term before committing long-term.</div>
+        <div class="pc-price">KES <span>—</span></div>
+        <div class="pc-period">per month · M-Pesa STK Push</div>
+        <ul class="pc-features">
+          <li>All grades 1–9</li>
+          <li>Unlimited students & classes</li>
+          <li>Print-ready report cards</li>
+          <li>Teacher accounts & roles</li>
+          <li>WhatsApp support</li>
+        </ul>
+        <a href="https://bett.website" target="_blank" class="pc-cta cta-wh">Get started →</a>
+      </div>
+
+      <div class="pc featured-pc">
+        <div class="feat-chip">Most Popular</div>
+        <div class="pc-plan">CBE Mark Sheet</div>
+        <div class="pc-name">Termly</div>
+        <div class="pc-desc">One payment, one full term. The go-to choice.</div>
+        <div class="pc-price">KES <span>—</span></div>
+        <div class="pc-period">per term · 3 terms per year</div>
+        <ul class="pc-features">
+          <li>Everything in Monthly</li>
+          <li>Better value per day</li>
+          <li>No mid-term disruptions</li>
+          <li>Priority WhatsApp support</li>
+          <li>M-Pesa STK Push</li>
+        </ul>
+        <a href="https://bett.website" target="_blank" class="pc-cta cta-red">Register school →</a>
+      </div>
+
+      <div class="pc">
+        <div class="pc-plan">CBE Mark Sheet</div>
+        <div class="pc-name">Annual</div>
+        <div class="pc-desc">Best value. One payment, a full academic year.</div>
+        <div class="pc-price">KES <span>—</span></div>
+        <div class="pc-period">per year · single M-Pesa payment</div>
+        <ul class="pc-features">
+          <li>Everything in Termly</li>
+          <li>Maximum savings</li>
+          <li>Full year, zero interruptions</li>
+          <li>Priority WhatsApp support</li>
+          <li>M-Pesa STK Push</li>
+        </ul>
+        <a href="https://bett.website" target="_blank" class="pc-cta cta-wh">Get started →</a>
+      </div>
+    </div>
+
+    <div class="custom-note">
+      <div class="cn-left">
+        <div class="cn-title">Need a custom build? Let's talk price.</div>
+        <div class="cn-sub">Custom web apps, mobile apps, payment integrations, and business platforms are all quoted individually based on scope, complexity, and timeline. No hidden fees. WhatsApp us with your idea and we'll respond within hours.</div>
+      </div>
+      <a href="https://wa.me/254704518130" target="_blank" class="btn-wa">💬 Get a Free Quote</a>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values">
+  <div class="wrap">
+    <div class="values-top">
+      <span class="eyebrow">Our Principles</span>
+      <h2 class="section-h">How we build</h2>
+    </div>
+    <div class="vals-grid">
+      <div class="val-cell">
+        <span class="vc-ico">🎯</span>
+        <div class="vc-title">Built for your problem</div>
+        <div class="vc-desc">Every product starts from a real, genuine need. No feature bloat, no copy-paste templates, no over-engineering.</div>
+      </div>
+      <div class="val-cell">
+        <span class="vc-ico">🇰🇪</span>
+        <div class="vc-title">Kenya-native</div>
+        <div class="vc-desc">M-Pesa, Kenyan regulations, local infrastructure — baked in from day one, not retrofitted as an afterthought.</div>
+      </div>
+      <div class="val-cell">
+        <span class="vc-ico">💰</span>
+        <div class="vc-title">Priced for Africa</div>
+        <div class="vc-desc">World-class software at prices that make sense for Kenyan businesses and schools. Not at European or US rates.</div>
+      </div>
+      <div class="val-cell">
+        <span class="vc-ico">🔒</span>
+        <div class="vc-title">Data stays yours</div>
+        <div class="vc-desc">Your data is never sold, never shared, and kept isolated. Security built in, not bolted on.</div>
+      </div>
+      <div class="val-cell">
+        <span class="vc-ico">⚡</span>
+        <div class="vc-title">Simple to use</div>
+        <div class="vc-desc">If it needs a training manual, it needs a redesign. Software should be obvious on day one.</div>
+      </div>
+      <div class="val-cell">
+        <span class="vc-ico">📞</span>
+        <div class="vc-title">Real human support</div>
+        <div class="vc-desc">You reach a real person on WhatsApp — the same person who built the software. Not a ticket queue or a chatbot.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="wrap">
+    <div class="final-inner">
+      <span class="eyebrow">Ready to start?</span>
+      <h2>Let's build something<br>great together.</h2>
+      <p>Got an idea? A business problem that needs a digital solution? An app you've been wanting to build? Send us a WhatsApp message — we reply fast.</p>
+      <div class="final-btns">
+        <a href="https://wa.me/254704518130" target="_blank" class="btn-wa">💬 WhatsApp +254 704 518 130</a>
+        <a href="https://bett.website" target="_blank" class="btn-ghost">🏫 Register for CBE Mark Sheet</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <a href="/" class="footer-brand">Bett KE Tech Ltd</a>
+      <div class="footer-copy">Kenya · Software Development Agency · © 2026</div>
+    </div>
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="https://cbemark.com">CBE Mark Sheet</a>
+      <a href="https://bett.website">bett.website</a>
+      <a href="mailto:bett@bett.website">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Back to top
+const btn = document.createElement('button');
+btn.style.cssText='position:fixed;bottom:24px;right:24px;width:42px;height:42px;background:#09090b;color:#fff;border:none;border-radius:10px;font-size:18px;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s;opacity:0;pointer-events:none;z-index:999;display:grid;place-items:center';
+btn.innerHTML='↑';
+btn.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
+btn.onmouseenter=()=>btn.style.transform='translateY(-2px)';
+btn.onmouseleave=()=>btn.style.transform='translateY(0)';
+document.body.appendChild(btn);
+window.addEventListener('scroll',()=>{
+  const s=window.scrollY>400;
+  btn.style.opacity=s?'1':'0';
+  btn.style.pointerEvents=s?'all':'none';
+});
+</script>
+</body>
+</html>
