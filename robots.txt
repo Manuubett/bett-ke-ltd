@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://bettketech.com/sitemap.xml
+Sitemap: https://tech-ltd.bett.website/sitemap.xml
