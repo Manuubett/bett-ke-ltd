@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Bett KE Tech Ltd</title>
+<meta name="description" content="Bett KE Tech is a Kenya-based, founder-led software company building practical school management systems and custom digital solutions for businesses across Kenya.">
+<link rel="canonical" href="https://tech-ltd.bett.website/about">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/icon-180.png">
+<meta name="theme-color" content="#09090b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bett KE Tech">
+<meta property="og:title" content="About Us | Bett KE Tech Ltd">
+<meta property="og:description" content="Kenya-based, founder-led software company building school management systems and custom digital solutions.">
+<meta property="og:url" content="https://tech-ltd.bett.website/about">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#09090b; --ink2:#3f3f46; --ink3:#a1a1aa; --paper:#fafaf9; --paper2:#f4f4f5; --paper3:#e4e4e7; --white:#fff;
+  --accent:#dc2626; --accent2:#f97316; --blue:#2563eb; --green:#16a34a; --gold:#d97706;
+  --nav-h:68px;
+  --founder-avatar-radius: 24px;
+}
+html{scroll-behavior:smooth;font-size:15px}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);overflow-x:hidden;line-height:1.7}
+body::before{
+  content:'';position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:1000;opacity:.4;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 5vw}
+.eyebrow{font-family:'Fira Code',monospace;font-size:.72rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:block}
+.section-h{font-family:'Fraunces',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:900;line-height:1.05;letter-spacing:-.035em;margin-bottom:16px}
+.section-h em{font-style:italic;font-weight:300;color:var(--ink3)}
+.body-p{color:var(--ink2);font-size:.93rem;line-height:1.85;margin-bottom:12px}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:200;height:var(--nav-h);background:rgba(250,250,249,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--paper3);display:flex;align-items:center;padding:0 5vw;gap:2rem}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:'Fraunces',serif;font-size:1.15rem;font-weight:700;color:var(--ink);flex-shrink:0;letter-spacing:-.02em}
+.logo-sq{width:36px;height:36px;background:var(--ink);border-radius:8px;display:grid;place-items:center;overflow:hidden;flex-shrink:0}
+.logo-sq img{width:100%;height:100%;object-fit:cover;display:block}
+.nav-links{display:flex;align-items:center;gap:2px;margin-left:auto}
+.nav-links a{padding:7px 15px;color:var(--ink2);text-decoration:none;font-size:.83rem;font-weight:500;border-radius:8px;transition:all .15s}
+.nav-links a:hover{color:var(--ink);background:var(--paper2)}
+.nav-cta{background:var(--ink)!important;color:#fff!important;padding:8px 18px!important;border-radius:8px!important;font-weight:600!important;margin-left:6px}
+.nav-cta:hover{background:#27272a!important;transform:translateY(-1px)}
+
+/* ── PAGE HERO ── */
+.about-hero{background:var(--ink);padding:90px 0 70px;position:relative;overflow:hidden}
+.about-hero::before{
+  content:'';position:absolute;top:-10%;right:-5%;width:55%;height:130%;
+  background:linear-gradient(135deg,var(--accent) 0%,#7f1d1d 100%);
+  clip-path:polygon(15% 0,100% 0,100% 100%,0% 100%);opacity:.07;
+}
+.about-hero .eyebrow{color:rgba(255,255,255,.35)}
+.about-hero h1{font-family:'Fraunces',serif;font-size:clamp(2.6rem,5.5vw,4.4rem);font-weight:900;color:#fff;line-height:1.02;letter-spacing:-.04em;margin-bottom:20px;position:relative;z-index:1;max-width:760px}
+.about-hero h1 em{font-style:italic;font-weight:300;color:rgba(255,255,255,.45)}
+.about-hero p{color:rgba(255,255,255,.4);font-size:.98rem;line-height:1.85;max-width:600px;position:relative;z-index:1}
+
+/* ── STORY ── */
+section.story{padding:100px 0}
+.story-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:start}
+.story-timeline{display:flex;flex-direction:column;gap:0}
+.tl-item{display:flex;gap:20px;padding:22px 0;border-bottom:1px solid var(--paper3)}
+.tl-item:last-child{border-bottom:none}
+.tl-year{font-family:'Fira Code',monospace;font-size:.78rem;font-weight:500;color:var(--accent);flex-shrink:0;width:52px;padding-top:2px}
+.tl-title{font-family:'Fraunces',serif;font-size:1.02rem;font-weight:700;margin-bottom:4px;letter-spacing:-.015em}
+.tl-desc{font-size:.82rem;color:var(--ink3);line-height:1.6}
+
+/* ── MISSION STRIP ── */
+section.mission{background:var(--paper2);border-top:1px solid var(--paper3);border-bottom:1px solid var(--paper3);padding:80px 0}
+.mission-inner{max-width:780px;margin:0 auto;text-align:center}
+.mission-inner .eyebrow{text-align:center}
+.mission-quote{font-family:'Fraunces',serif;font-size:clamp(1.5rem,2.6vw,2.1rem);font-weight:700;line-height:1.35;letter-spacing:-.02em;color:var(--ink)}
+.mission-quote em{font-style:italic;font-weight:300;color:var(--ink3)}
+
+/* ── VALUES (reused pattern) ── */
+section.values{padding:100px 0}
+.values-top{text-align:center;margin-bottom:56px}
+.vals-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--paper3);border:1px solid var(--paper3);border-radius:18px;overflow:hidden}
+.val-cell{background:var(--white);padding:36px 32px;transition:all .2s}
+.val-cell:hover{background:var(--ink)}
+.val-cell:hover .vc-title{color:#fff}
+.val-cell:hover .vc-desc{color:rgba(255,255,255,.4)}
+.vc-ico{font-size:28px;margin-bottom:16px;display:block}
+.vc-title{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:700;margin-bottom:8px;transition:color .2s;letter-spacing:-.02em}
+.vc-desc{font-size:.82rem;color:var(--ink3);line-height:1.65;transition:color .2s}
+
+/* ── FOUNDER (reused pattern) ── */
+section.founder{padding:100px 0;background:var(--ink)}
+.founder-inner{display:grid;grid-template-columns:380px 1fr;gap:70px;align-items:start}
+.founder-visual{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:20px;padding:44px 36px;position:relative;overflow:hidden}
+.founder-visual::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(220,38,38,.3) 0%,transparent 70%)}
+.founder-avatar{width:90px;height:90px;border-radius:var(--founder-avatar-radius);background:rgba(255,255,255,.08);display:grid;place-items:center;font-size:42px;margin-bottom:24px;overflow:hidden}
+.founder-avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.founder-name{font-family:'Fraunces',serif;font-size:2rem;font-weight:900;color:#fff;letter-spacing:-.04em;margin-bottom:4px}
+.founder-title{font-family:'Fira Code',monospace;font-size:.72rem;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px}
+.founder-tagline{color:rgba(255,255,255,.4);font-size:.85rem;line-height:1.7;margin-bottom:28px}
+.founder-right .eyebrow{color:rgba(255,255,255,.3)}
+.founder-right .section-h{color:#fff;margin-bottom:20px}
+.founder-right .section-h em{color:rgba(255,255,255,.2)}
+.founder-right .body-p{color:rgba(255,255,255,.45)}
+
+/* ── SOCIAL ── */
+.social-title{font-family:'Fira Code',monospace;font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin:32px 0 14px}
+.social-links{display:flex;flex-direction:column;gap:10px}
+.soc-item{display:flex;align-items:center;gap:12px;padding:13px 16px;border-radius:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);text-decoration:none;color:rgba(255,255,255,.65);font-size:.85rem;font-weight:500;transition:all .15s}
+.soc-item:hover{background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.2);transform:translateX(3px)}
+.soc-ico{width:20px;height:20px;flex-shrink:0;display:grid;place-items:center}
+.soc-ico svg{width:16px;height:16px;fill:currentColor}
+.soc-handle{margin-left:auto;font-family:'Fira Code',monospace;font-size:.72rem;color:rgba(255,255,255,.3)}
+
+/* ── CTA FINAL (reused) ── */
+section.final-cta{padding:100px 0}
+.final-inner{background:var(--ink);border-radius:24px;padding:80px 60px;text-align:center;position:relative;overflow:hidden}
+.final-inner::before{content:'BUILD KE';position:absolute;font-family:'Fraunces',serif;font-size:14vw;font-weight:900;color:rgba(255,255,255,.02);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;letter-spacing:-.05em}
+.final-inner .eyebrow{color:rgba(255,255,255,.25);margin-bottom:20px}
+.final-inner h2{font-family:'Fraunces',serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:900;color:#fff;letter-spacing:-.04em;margin-bottom:16px;position:relative;z-index:1}
+.final-inner p{color:rgba(255,255,255,.4);font-size:.95rem;max-width:500px;margin:0 auto 40px;position:relative;z-index:1}
+.final-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+.btn-wa{display:inline-flex;align-items:center;gap:8px;background:#16a34a;color:#fff;padding:14px 28px;border-radius:10px;font-size:.9rem;font-weight:600;text-decoration:none;transition:all .2s}
+.btn-wa:hover{background:#15803d;transform:translateY(-2px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:transparent;color:rgba(255,255,255,.6);padding:14px 28px;border-radius:10px;border:1px solid rgba(255,255,255,.15);font-size:.9rem;font-weight:500;text-decoration:none;transition:all .2s}
+.btn-ghost:hover{background:rgba(255,255,255,.07);color:#fff;border-color:rgba(255,255,255,.3)}
+
+/* ── FOOTER (reused) ── */
+footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:36px 5vw}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.footer-brand{font-family:'Fraunces',serif;font-size:.95rem;font-weight:700;color:rgba(255,255,255,.35);text-decoration:none}
+.footer-copy{font-size:.75rem;color:rgba(255,255,255,.2);margin-top:2px}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap}
+.footer-links a{font-size:.78rem;color:rgba(255,255,255,.3);text-decoration:none;font-weight:500;transition:color .15s}
+.footer-links a:hover{color:rgba(255,255,255,.7)}
+.footer-social{display:flex;gap:10px}
+.footer-social a{width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);display:grid;place-items:center;color:rgba(255,255,255,.4);transition:all .15s}
+.footer-social a:hover{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.2)}
+.footer-social svg{width:14px;height:14px;fill:currentColor}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  .story-grid{grid-template-columns:1fr;gap:40px}
+  .founder-inner{grid-template-columns:1fr;gap:40px}
+  .vals-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  .vals-grid{grid-template-columns:1fr}
+  .nav-links a:not(.nav-cta){display:none}
+  section.story,section.mission,section.values,section.founder,section.final-cta{padding:64px 0}
+  .final-inner{padding:48px 28px}
+  .footer-inner{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="logo-sq"><img src="icon-192.png" alt="Bett KE Tech logo" width="36" height="36"></div>
+    Bett KE Tech
+  </a>
+  <div class="nav-links">
+    <a href="/#services">Services</a>
+    <a href="/#projects">Projects</a>
+    <a href="/about">About</a>
+    <a href="/#pricing">Pricing</a>
+    <a href="https://wa.me/254112190574" target="_blank" class="nav-cta">Get a Quote →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="about-hero">
+  <div class="wrap">
+    <div class="eyebrow">About Bett KE Tech</div>
+    <h1>Built in Kenya, <em>for the problems Kenyan schools and businesses actually have.</em></h1>
+    <p>We're a school-first software company that also builds custom digital systems for businesses — practical, affordable, and supported by the same person who built it.</p>
+  </div>
+</div>
+
+<!-- STORY -->
+<section class="story">
+  <div class="wrap">
+    <div class="story-grid">
+      <div>
+        <span class="eyebrow">Our Story</span>
+        <h2 class="section-h">How we <em>got here.</em></h2>
+        <p class="body-p">Bett KE Tech began with a simple observation: Kenyan schools and small businesses were stuck choosing between expensive foreign software that didn't fit local workflows, or no software at all. We set out to close that gap.</p>
+        <p class="body-p">What started as a single school marks system has grown into a school-first software company, with a widening set of tools for finance, timetabling, and business operations across Kenya.</p>
+      </div>
+      <div class="story-timeline">
+        <div class="tl-item">
+          <div class="tl-year">2025</div>
+          <div>
+            <div class="tl-title">Bett KE Tech founded</div>
+            <div class="tl-desc">Started building school and business software with a focus on local needs — M-Pesa, CBC, and Kenyan admin realities baked in from day one.</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2025</div>
+          <div>
+            <div class="tl-title">CBE Mark Sheet System launches</div>
+            <div class="tl-desc">Our flagship product goes live — a full CBC-aligned marks and reporting platform for Grades 1–12, with M-Pesa billing built in.</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2026</div>
+          <div>
+            <div class="tl-title">Finance & timetable packages</div>
+            <div class="tl-desc">Two ready-to-deploy school packages launch, extending the product line beyond marks into fee tracking, auditing, and clash-free scheduling.</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">Now</div>
+          <div>
+            <div class="tl-title">Growing school-first, staying founder-led</div>
+            <div class="tl-desc">Every product is still designed and built directly by the founder — one point of contact, from first idea to long-term support.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="mission">
+  <div class="wrap">
+    <div class="mission-inner">
+      <span class="eyebrow">Our Mission</span>
+      <p class="mission-quote">To make <em>reliable, affordable</em> software the default for Kenyan schools and businesses — not the exception.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values">
+  <div class="wrap">
+    <div class="values-top">
+      <span class="eyebrow">What We Stand For</span>
+      <h2 class="section-h">The principles behind every build</h2>
+    </div>
+    <div class="vals-grid">
+      <div class="val-cell">
+        <span class="vc-ico">🎯</span>
+        <div class="vc-title">Built for your problem</div>
+        <div class="vc-desc">Every product starts from a real, genuine need. No feature bloat, no copy-paste templates, no over-engineering.</div>
+      </div>
+      <div class="val-cell">
+        <span class="vc-ico">🇰🇪</span>
+        <div class="vc-title">Kenya-native</div>
+        <div class="vc-desc">M-Pesa, Kenyan regulations, local infrastructure — baked in from day one, not retrofitted as an afterthought.</div>
+      </div>
+      <div class="val-cell">
+        <span class="vc-ico">💰</span>
+        <div class="vc-title">Priced for Africa</div>
+        <div class="vc-desc">World-class software at prices that make sense for Kenyan businesses and schools. Not at European or US rates.</div>
+      </div>
+      <div class="val-cell">
+        <span class="vc-ico">🔒</span>
+        <div class="vc-title">Data stays yours</div>
+        <div class="vc-desc">Your data is never sold, never shared, and kept isolated. Security built in, not bolted on.</div>
+      </div>
+      <div class="val-cell">
+        <span class="vc-ico">⚡</span>
+        <div class="vc-title">Simple to use</div>
+        <div class="vc-desc">If it needs a training manual, it needs a redesign. Software should be obvious on day one.</div>
+      </div>
+      <div class="val-cell">
+        <span class="vc-ico">📞</span>
+        <div class="vc-title">Real human support</div>
+        <div class="vc-desc">You reach a real person on WhatsApp — the same person who built the software. Not a ticket queue or a chatbot.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER + SOCIAL -->
+<section class="founder" id="founder">
+  <div class="wrap">
+    <div class="founder-inner">
+      <div class="founder-visual">
+        <div class="founder-avatar"><img src="icon-192.png" alt="Bett Emanuel — Founder & Lead Developer, Bett KE Tech" width="90" height="90"></div>
+        <div class="founder-name">Bett Emanuel</div>
+        <div class="founder-title">Founder & Lead Developer</div>
+        <p class="founder-tagline">Final-year software developer at the University of Embu (graduating Aug 2026), and founder of Bett KE Tech. Every product under the company is designed and built by him, from backend architecture to pixel-perfect UI.</p>
+
+        <div class="social-title">Follow / Connect</div>
+        <div class="social-links">
+          <a href="https://x.com/BettBe35616" target="_blank" rel="noopener" class="soc-item">
+            <span class="soc-ico">
+              <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </span>
+            X (Twitter)
+            <span class="soc-handle">@BettBe35616</span>
+          </a>
+          <a href="https://www.linkedin.com/in/bett-emanuel-882a52362" target="_blank" rel="noopener" class="soc-item">
+            <span class="soc-ico">
+              <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.446-2.136 2.94v5.666H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.114 20.452H3.558V9h3.556v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0z"/></svg>
+            </span>
+            LinkedIn
+            <span class="soc-handle">Bett Emanuel</span>
+          </a>
+          <a href="https://youtube.com/@candle-o1p" target="_blank" rel="noopener" class="soc-item">
+            <span class="soc-ico">
+              <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </span>
+            YouTube
+            <span class="soc-handle">@candle-o1p</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="founder-right">
+        <span class="eyebrow">The Founder</span>
+        <h2 class="section-h">A founder-led company, <em>built to grow.</em></h2>
+        <p class="body-p">Bett KE Tech started with a simple goal: build useful software for real problems in Kenya. Today, the company is school-first, with products designed around the daily work of teachers, school administrators, and businesses.</p>
+        <p class="body-p">The company is intentionally built to stay close to its customers. Whether it is a school system or a business platform, you communicate directly with the person leading the build — from the first idea to launch and support.</p>
+        <p class="body-p">Bett's approach starts with understanding the problem before writing a line of code, focuses on functionality over technology for its own sake, and treats every product as something that keeps improving as users' needs change.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="wrap">
+    <div class="final-inner">
+      <span class="eyebrow">Want to know more?</span>
+      <h2>Let's talk about<br>your school or business.</h2>
+      <p>Whether it's a question about our products or an idea for something custom, we're one WhatsApp message away.</p>
+      <div class="final-btns">
+        <a href="https://wa.me/254112190574" target="_blank" class="btn-wa">💬 WhatsApp 0112 190 574</a>
+        <a href="/#projects" class="btn-ghost">🏫 Explore School Products</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <a href="/" class="footer-brand">Bett KE Tech Ltd</a>
+      <div class="footer-copy">Kenya · School-first software company · © 2026</div>
+    </div>
+    <div class="footer-links">
+      <a href="/#services">Services</a>
+      <a href="/#projects">Projects</a>
+      <a href="/about">About</a>
+      <a href="https://cbemark.com">CBE Mark Sheet</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://x.com/BettBe35616" target="_blank" rel="noopener" aria-label="X (Twitter)">
+        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/bett-emanuel-882a52362" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.446-2.136 2.94v5.666H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.114 20.452H3.558V9h3.556v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0z"/></svg>
+      </a>
+      <a href="https://youtube.com/@candle-o1p" target="_blank" rel="noopener" aria-label="YouTube">
+        <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
